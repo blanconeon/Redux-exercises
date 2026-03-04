@@ -16,14 +16,17 @@ const reducer = (state = initialWagonState, action) => {
        
       };
       
-       case 'travel':
+      case 'travel':
+       if(state.supplies < (action.payload * 20)) {
+        return state // if travel days are more than avilable supplies returns state. preventing -supplies
+       } else
       return {
         ...state,
         supplies: state.supplies - (action.payload * 20),
         distance: state.distance + (action.payload * 10),
         days: state.days + action.payload
       };
-
+      
       case 'tippedWagon':
       return {
        ...state,
