@@ -9,7 +9,7 @@ const options = {
   reducers: {
    //Reducer for "addRecipe" action
    addRecipe: (state, action) => {
-    return [...state, action.payload]
+        state.push(action.payload);
    },
    // Reducer for RemoveRecipe
    removeRecipe: (state, action) => {
@@ -35,3 +35,10 @@ export const selectFilteredFavoriteRecipes = (state) => {
     recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 };
+
+export const {
+   addRecipe,
+   removeRecipe,
+} = favoriteRecipesSlice.actions;
+
+export default favoriteRecipesSlice.reducer;
