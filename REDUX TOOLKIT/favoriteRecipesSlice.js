@@ -36,12 +36,6 @@ export const selectFilteredFavoriteRecipes = (state) => {
   );
 };
 
-export const {
-   addRecipe,
-   removeRecipe,
-} = favoriteRecipesSlice.actions;
-
-export default favoriteRecipesSlice.reducer;
 
 /* THE CODE ABOVE:
 Here’s what each part does:
