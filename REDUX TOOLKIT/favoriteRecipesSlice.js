@@ -42,3 +42,14 @@ export const {
 } = favoriteRecipesSlice.actions;
 
 export default favoriteRecipesSlice.reducer;
+
+/* THE CODE ABOVE:
+Here’s what each part does:
+
+- `selectFavoriteRecipes` is a selector function. It takes the whole Redux state and returns just the `favoriteRecipes` part. This helps components get only the data they need.
+
+- `selectFilteredFavoriteRecipes` is another selector. It uses `selectFavoriteRecipes` to get the recipes, and `selectSearchTerm` to get the search term. Then, it filters the recipes to only include those whose names match the search term.
+
+- The line with `addRecipe` and `removeRecipe` gets the action creators from the slice, so you can dispatch actions like `dispatch(addRecipe(recipe))`.
+
+- `export default favoriteRecipesSlice.reducer` exports the reducer function. This reducer is used in the Redux store to handle updates to the `favoriteRecipes` state. */
