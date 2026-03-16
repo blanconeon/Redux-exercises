@@ -7,7 +7,8 @@ const json = await data.json()  // transform to JSON
 return json  // return data as JSON
 }
  )
-
+ //  above NOTE THIS DOES NOT USE async (arg, thunkAPI)  AS IS NOT NEEDED BECAUSE WE GET ALL RECIPES THERE IS NO SPECIFIC REQUEST LIKE async (recipeName, thunkAPI) => {... const response = await searchRecipes(recipeName);
+   
 export const allRecipesSlice = createSlice({
   name: 'allRecipes',
   initialState: {
